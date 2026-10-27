@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "com.metisfoundry/metis-check",
+  "name": "com.metisfoundry.check-api/metis-check",
   "title": "Metis Check",
   "description": "Checks an answer's citations at the registries that issue them. Every check files a signed report.",
   "version": "1.0.0",
