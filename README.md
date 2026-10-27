@@ -1,55 +1,53 @@
-# Metis plugins
+# Metis Check
 
-Plugins from [Metis Foundry](https://metisfoundry.com) for Codex, ChatGPT, Claude and Claude Code: a citation checker that verifies DOIs, PubMed and arXiv ids, LEIs, company numbers and U.S. case citations at the registries that issue them, and files a signed report anyone can recheck.
+**Check the citations in an AI answer at the registries that issue them.** DOI, PubMed, arXiv, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, UK company numbers, domains and more. Each identifier comes back in exactly one of four states: settled true, settled false, not decidable (a person decides) or unreachable (a delay, not evidence). Every check ends in a signed report with its own id, a PDF and a recheck button anyone can press.
 
-## Metis Check
+By [Metis Foundry](https://metisfoundry.com). One account covers ChatGPT, Codex, Claude, Claude Code, Cursor and VS Code. Every account starts with 5 checks a month; [plans](https://check-api.metisfoundry.com/check/plans).
 
-Check the citations in an answer at the registries that issue them: DOI, PubMed, arXiv, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI and more. Each identifier comes back in exactly one of four states, settled true, settled false, not decidable or unreachable, and every check ends in a signed report with its own id, a public page, a PDF and a recheck button.
+[![A Metis Check report](https://check-api.metisfoundry.com/check/report/MC-ND82-CGEH-PFFH/card.png)](https://check-api.metisfoundry.com/check/report/MC-ND82-CGEH-PFFH)
 
-### Codex
+*A real report: three identifiers settled true, one settled false. [Open it and press Recheck](https://check-api.metisfoundry.com/check/report/MC-ND82-CGEH-PFFH).*
 
-```bash
-codex plugin marketplace add MetisFoundry/metis-plugins
-codex plugin add metis-check@metis
-```
+## Install
 
-Sign in or create a free Metis account when Codex asks (5 checks a month).
+| Client | How |
+|---|---|
+| **Claude** (web, desktop, mobile) | Settings → Connectors → add a connector by URL: `https://mcp.metisfoundry.com/mcp`. Once Metis Check is listed in the connectors directory, choose it there. |
+| **Claude Code** | `/plugin marketplace add MetisFoundry/metis-plugins` then `/plugin install metis-check@metis`, or `claude mcp add --transport http metis-check https://mcp.metisfoundry.com/mcp` |
+| **Codex CLI** | `codex plugin marketplace add MetisFoundry/metis-plugins` then `codex plugin add metis-check@metis` |
+| **ChatGPT** | The Metis Check plugin is submitted to the OpenAI directory. Until it is listed: Settings → Connectors → add by address `https://check-api.metisfoundry.com/mcp/check` |
+| **Cursor** | [Add to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=metis-check&config=eyJ1cmwiOiAiaHR0cHM6Ly9jaGVjay1hcGkubWV0aXNmb3VuZHJ5LmNvbS9tY3AvY2hlY2sifQ==) |
+| **VS Code** | [Add to VS Code](vscode:mcp/install?%7B%22name%22%3A%20%22metis-check%22%2C%20%22type%22%3A%20%22http%22%2C%20%22url%22%3A%20%22https%3A%2F%2Fcheck-api.metisfoundry.com%2Fmcp%2Fcheck%22%7D) ([web redirect](https://vscode.dev/redirect/mcp/install?name=metis-check&config=%7B%22type%22%3A%20%22http%22%2C%20%22url%22%3A%20%22https%3A%2F%2Fcheck-api.metisfoundry.com%2Fmcp%2Fcheck%22%7D)), or `code --add-mcp '{"name": "metis-check", "type": "http", "url": "https://check-api.metisfoundry.com/mcp/check"}'` |
+| **Any MCP client** | Remote server `https://check-api.metisfoundry.com/mcp/check` (OAuth sign-in; a free account is created on first connection). Registry name `com.metisfoundry/metis-check`. |
 
-### ChatGPT
+Sign in or create a free Metis account when the client asks.
 
-Metis Check is submitted to the OpenAI plugin directory. Until it is listed, add it as a connector by address in Settings → Connectors: `https://check-api.metisfoundry.com/mcp/check`.
+## Try it in one click
 
-### Claude
+* [Try it in Claude](https://claude.ai/new?q=Use%20Metis%20Check%20to%20check%20these%20references%3A%2010.1038%2Fs41586-020-2649-2%2C%20PMID%2032939066%2C%20arXiv%3A2005.14165%20and%2010.1000%2Fnot-a-real-doi-9999.%20Give%20me%20the%20report%20link.)
+* [Try it in ChatGPT](https://chatgpt.com/?q=Use%20Metis%20Check%20to%20check%20these%20references%3A%2010.1038%2Fs41586-020-2649-2%2C%20PMID%2032939066%2C%20arXiv%3A2005.14165%20and%2010.1000%2Fnot-a-real-doi-9999.%20Give%20me%20the%20report%20link.)
 
-In Claude, open Settings → Connectors and choose Metis Check, or add it by address: `https://mcp.metisfoundry.com/mcp`.
+The prompt asks Metis Check to check four references, one of them invented. The invented one comes back settled false, with the registry that said so.
 
-### Claude Code
+## What you get
 
-```bash
-/plugin marketplace add MetisFoundry/metis-plugins
-/plugin install metis-check@metis
-```
+* **Four states, nothing hidden**: settled true, settled false, not decidable, unreachable, and a not-checked list with the reason for each.
+* **A report that rechecks without Metis**: every line carries the registry query and the SHA-256 of the registry's answer; signed JSON and a PDF.
+* **Shareable**: anyone with the link can open the report and press Recheck; the registries are asked again, live.
+* **Private**: passages are never stored, only the identifiers, their positions and a hash. Metis never asks for conversation history.
+* **Honest scope**: Metis Check establishes that an identifier is registered and what the registry says. It does not decide whether a paper supports a claim.
 
-Or add the server directly:
+## Plans
 
-```bash
-claude mcp add --transport http metis-check https://mcp.metisfoundry.com/mcp
-```
+Free: 5 checks a month. Pro: $29 a month (or $276 a year), 2,000 checks, case law included. Team: $249 a month (or $2,388 a year), 15,000 checks, 5 seats. Checks that cannot be settled cost nothing. Details: https://check-api.metisfoundry.com/check/plans
 
-### Any MCP client
+## Repository layout
 
-Remote MCP server (OAuth sign-in, free account): `https://check-api.metisfoundry.com/mcp/check`. Registry name `com.metisfoundry/metis-check`.
+* `.agents/plugins/marketplace.json` — Codex marketplace (`metis`); plugin in `plugins/metis-check`
+* `.claude-plugin/marketplace.json` — Claude Code marketplace (`metis`); plugin manifest in `plugins/metis-check/.claude-plugin`
+* `server.json` — official MCP Registry manifest
+* `PUBLISH.md` — how the listings are published
 
-### Plans
+## Support and license
 
-Every account starts with 5 checks a month. Plans and prices: https://check-api.metisfoundry.com/check/plans. One account covers Codex, ChatGPT and Claude.
-
-### Support
-
-hello@metisfoundry.com · Privacy: https://mcp.metisfoundry.com/privacy · Terms: https://mcp.metisfoundry.com/terms
-
-Copyright (c) 2026 Metis Foundry. All rights reserved. The plugin files in this repository may be installed and used with Codex, ChatGPT and Claude; the Metis Check service is operated by Metis Foundry under its terms.
-
-### License
-
-The files in this repository are MIT licensed (`LICENSE`); the Metis Check service is proprietary (`NOTICE.md`).
+hello@metisfoundry.com. The files in this repository are MIT licensed (`LICENSE`); the Metis Check service is proprietary (`NOTICE.md`).
