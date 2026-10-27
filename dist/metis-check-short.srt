@@ -1,0 +1,20 @@
+1
+00:00:00,300 --> 00:00:08,485
+Metis Check for ChatGPT and Codex. Checks the citations in an answer at the registries that issue them. Every check files a signed report anyone can recheck.
+
+2
+00:00:09,267 --> 00:00:17,477
+Ask: is this DOI real? Metis asks Crossref, the agency that registered it. Settled true, with a report.
+
+3
+00:00:18,767 --> 00:00:30,705
+Ask: check the citations in this paragraph. Every identifier is found at its position and checked. Three on record. One DOI is not: settled false.
+
+4
+00:00:32,267 --> 00:00:43,479
+Every report: unique id, registry query per line, a recheck button anyone can press, PDF and signed JSON.
+
+5
+00:00:50,267 --> 00:00:57,922
+Metis Check by Metis Foundry. Add it in ChatGPT, Codex, Claude or Claude Code. hello@metisfoundry.com
+

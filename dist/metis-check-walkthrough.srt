@@ -1,0 +1,56 @@
+1
+00:00:00,300 --> 00:00:08,485
+Metis Check for ChatGPT and Codex. Checks the citations in an answer at the registries that issue them. Every check files a signed report anyone can recheck.
+
+2
+00:00:09,267 --> 00:00:15,929
+Free: 5 checks a month. Pro and Team on the same page. No prices inside the plugin.
+
+3
+00:00:21,267 --> 00:00:26,407
+Connect: sign in once with a Metis account. One account covers ChatGPT, Codex and Claude.
+
+4
+00:00:33,267 --> 00:00:41,477
+Ask: is this DOI real? Metis asks Crossref, the agency that registered it. Settled true, with a report.
+
+5
+00:00:49,267 --> 00:01:00,487
+Ask: check this LEI for Apple Inc. Metis asks GLEIF and compares the name. Settled true.
+
+6
+00:01:05,267 --> 00:01:17,205
+Ask: check the citations in this paragraph. Every identifier is found at its position and checked. Three on record. One DOI is not: settled false.
+
+7
+00:01:25,267 --> 00:01:33,207
+Ask: check this ROR id for MIT. Metis asks the Research Organization Registry. Settled true, under the name given.
+
+8
+00:01:41,267 --> 00:01:48,001
+Ask: open my report and tell me whether its signature still verifies. Every item, the rechecks since, and signature verified: true.
+
+9
+00:01:57,267 --> 00:02:02,630
+Ask it to check a whole conversation: no tool is called. Metis checks a passage you give it.
+
+10
+00:02:06,267 --> 00:02:11,781
+Give it a bare number: it asks what the number is. Metis never guesses an identifier's type.
+
+11
+00:02:15,267 --> 00:02:21,763
+Ask whether a paper proves your point: Metis reports the registration and what Crossref holds. It does not grade the argument.
+
+12
+00:02:25,267 --> 00:02:36,479
+Every report: unique id, registry query per line, a recheck button anyone can press, PDF and signed JSON.
+
+13
+00:02:56,267 --> 00:03:02,251
+The verification engine behind Metis Check comes from Metis's proprietary methods, developed through government-grade research.
+
+14
+00:03:03,267 --> 00:03:10,922
+Metis Check by Metis Foundry. Add it in ChatGPT, Codex, Claude or Claude Code. hello@metisfoundry.com
+
