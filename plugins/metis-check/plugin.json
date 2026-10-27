@@ -1,0 +1,115 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "metis-check",
+  "version": "1.0.0",
+  "description": "Metis Check settles identifiers at the bodies that issue them. Give it one identifier (a DOI, PubMed ID, arXiv id, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, RxCUI, PubChem CID, OpenAlex id, Wikidata item, UK company number, FAA N-number, USGS event id, domain name or U.S. case citation) or a passage that contains several, and it asks the registry for each one and answers with exactly one of four states: settled true, settled false, not decidable (a person decides) or unreachable (a delay, not evidence). Anything it did not look at is reported as not checked, with the reason. Every check ends in a report with a unique id (MC-XXXX-XXXX-XXXX), a public page, a PDF, signed receipts and a recheck button that asks the registries again. It checks the checkable parts of a text at the source; it does not grade a text true or false.",
+  "author": {
+    "name": "Metis Foundry",
+    "email": "paul@metisfoundry.com",
+    "url": "https://metisfoundry.com"
+  },
+  "homepage": "https://metisfoundry.com",
+  "license": "Proprietary",
+  "keywords": [
+    "citations",
+    "references",
+    "DOI",
+    "identifiers",
+    "registries",
+    "case law",
+    "provenance",
+    "research",
+    "fact check at the source"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/setup/SKILL.md",
+      "interface": {
+        "displayName": "Metis Check",
+        "shortDescription": "Check citations at the source",
+        "longDescription": "Metis Check asks the body that issues an identifier whether it exists and what it points to, then tells you in plain words.\n\nWHAT IT CHECKS\nScholarly: DOI, PubMed ID, arXiv id, ORCID iD, ROR ID, ISBN, OpenAlex ID.\nCompanies and finance: Legal Entity Identifier (LEI), ISIN, CUSIP, SEC CIK, US EIN (tax-exempt), UK company number.\nHealth and science: NPI, RxNorm RxCUI, PubChem CID, USGS event id.\nOther: Wikidata item, FAA N-number, domain name, U.S. case citation (CourtListener index).\n\nHOW IT ANSWERS\nEach identifier gets exactly one of four states, never a score:\n- settled true: the registry answered and the identifier resolves as stated.\n- settled false: the registry answered and it does not.\n- not decidable: the registry's answer does not settle it (for example the name given does not match the registered one); a person decides.\n- unreachable: the registry did not answer in time. That is a delay, not evidence.\nAnything not looked at is listed as not checked, with the reason.\n\nTHREE TOOLS\ncheck_identifier checks one identifier. check_text finds every identifier in one passage you paste or point to (a paragraph, a reference list, an abstract) at its exact position and checks each one; the passage itself is not stored, only the identifiers, their positions and a hash. get_report opens a report you already have by its id.\n\nTHE REPORT\nEvery check ends in a report with a unique id (MC-XXXX-XXXX-XXXX), a public page, a PDF, signed receipts (the registry query, the HTTP status and the SHA-256 of the registry's answer) and a recheck button. Anyone with the link can recheck the report; the recheck asks the registries again, live, and is filed as a new report linked to the first. Reports also live on your Metis account page.\n\nWHAT IT DOES NOT DO\nIt does not grade a text true or false, and a report is not a statement that the surrounding text is accurate. It checks the identifiers in a text, not the argument around them. Registries are issuers or indexes: CourtListener is a case-law citation index, not the court that issued a decision. It does not read your conversation; it checks only the identifier or passage you give it.\n\nACCOUNT\nRequires a Metis account (sign in or create one when connecting). Checks count against the account's monthly allowance; the account page shows what has been used.",
+        "developerName": "Metis Foundry",
+        "category": "Productivity",
+        "capabilities": [
+          "Checks a DOI, PubMed ID or arXiv id at its registry",
+          "Checks ORCID, ROR, ISBN, OpenAlex and Wikidata ids at their registries",
+          "Checks LEI, ISIN, CUSIP, CIK, EIN, NPI and UK company numbers at their issuers",
+          "Checks U.S. case citations against the CourtListener index",
+          "Checks every identifier in a pasted passage at its exact position",
+          "Returns one of four states per identifier, never a score",
+          "Files a report with a unique id, PDF, signed receipts and a recheck button"
+        ],
+        "websiteURL": "https://metisfoundry.com",
+        "supportURL": "https://metisfoundry.com/#contact",
+        "privacyPolicyURL": "https://metisfoundry.com/privacy",
+        "termsOfServiceURL": "https://metisfoundry.com/terms",
+        "defaultPrompt": [
+          "Check the citations in this paragraph: ...",
+          "Is 10.1038/s41586-020-2649-2 a real DOI?",
+          "Check the LEI HWUPKR0MPOU8FGXBT394 for Apple Inc."
+        ],
+        "brandColor": "#835AFF",
+        "brandColorDark": "#835AFF",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png",
+        "screenshots": []
+      },
+      "review": {
+        "commerce": false,
+        "commerce_description": "No sales in the plugin. Works with a Metis account; plans are managed on metisfoundry pages outside ChatGPT. No ChatGPT-specific pricing.",
+        "test_cases": {
+          "positive": [
+            {
+              "description": "One DOI, checked at Crossref.",
+              "prompt": "Is 10.1038/s41586-020-2649-2 a real DOI?",
+              "tools_triggered": "check_identifier",
+              "expected_behavior": "The assistant calls check_identifier with the DOI. The reply leads with the report headline, gives the state (settled true) and the registry (Crossref), and includes the report link and PDF link. It reports the state and the registry, nothing stronger."
+            },
+            {
+              "description": "One LEI with a name to compare, checked at GLEIF.",
+              "prompt": "Check the LEI HWUPKR0MPOU8FGXBT394 for Apple Inc.",
+              "tools_triggered": "check_identifier",
+              "expected_behavior": "The assistant calls check_identifier with the LEI and name. The reply gives the state and the registered name GLEIF holds, says whether it matched, and gives the report link. A name mismatch is reported as needs a person, not as false."
+            },
+            {
+              "description": "A pasted reference list with several identifier types.",
+              "prompt": "Check the citations in this paragraph: Recent work (doi:10.1038/s41586-020-2649-2; PMID 32939066; arXiv:2005.14165) extended the approach. See also 10.1000/not-a-real-doi-9999.",
+              "tools_triggered": "check_text",
+              "expected_behavior": "The assistant calls check_text with the pasted paragraph only. The reply lists each identifier with its state (the first three settled true, the last settled false) and registry, states how many were not checked and why, and gives the report and PDF links. It does not grade the paragraph as a whole."
+            },
+            {
+              "description": "A U.S. case citation, checked against the CourtListener index.",
+              "prompt": "Does the citation 410 U.S. 113 exist? It is cited as Roe v. Wade.",
+              "tools_triggered": "check_identifier",
+              "expected_behavior": "The assistant calls check_identifier with type case_citation and the case name. The reply gives the state and adds that CourtListener is a citation index, not the court. On an account whose plan does not include case law, the reply relays the tool's sentence as is and names the plans page without adding any pricing."
+            },
+            {
+              "description": "Open an earlier report by its id.",
+              "prompt": "Open my Metis Check report MC-7K3F-9Q2M-4XWD and tell me whether its signature still verifies.",
+              "tools_triggered": "get_report",
+              "expected_behavior": "The assistant calls get_report with the id. The reply gives the report's items and states, any rechecks filed since, whether the signature verified, and the report link. No new check is run. For an id the account does not hold, the reply relays the tool's sentence."
+            }
+          ],
+          "negative": [
+            {
+              "description": "A request to grade a whole conversation. The plugin does not grade a text true or false; the assistant asks which passage or identifiers to check and offers check_text on that passage only.",
+              "prompt": "Is everything in this conversation true? Check all of it."
+            },
+            {
+              "description": "A bare number with no type. The identifier's shape does not say what it is; the assistant asks which kind of identifier it is before calling check_identifier with a type.",
+              "prompt": "Check 1234567890."
+            },
+            {
+              "description": "A request for legal advice around a citation. The plugin checks whether the citation exists in the CourtListener index and says that is an index, not the court; the assistant gives no legal advice from the result.",
+              "prompt": "Check 410 U.S. 113 and tell me whether I can use it to win my case."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "First release. Checks 21 identifier types at their issuing registries or indexes, one of four states per identifier, a report with a unique id, PDF, signed receipts and a recheck button.",
+        "countries": []
+      }
+    }
+  }
+}

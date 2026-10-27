@@ -1,0 +1,20 @@
+{
+  "name": "metis",
+  "interface": {
+    "displayName": "Metis Foundry"
+  },
+  "plugins": [
+    {
+      "name": "metis-check",
+      "source": {
+        "source": "local",
+        "path": "./plugins/metis-check"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
