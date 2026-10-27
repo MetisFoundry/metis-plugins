@@ -1,6 +1,6 @@
 # Metis Check
 
-**Check the citations in an AI answer at the registries that issue them.** DOI, PubMed, arXiv, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, UK company numbers, domains and more. Each identifier comes back in exactly one of four states: settled true, settled false, not decidable (a person decides) or unreachable (a delay, not evidence). Every check ends in a signed report with its own id, a PDF and a recheck button anyone can press.
+**The check every cited AI answer needs before you rely on it.** A citation that looks complete and points to nothing costs a correction, a retraction or a sanction. Metis Check asks the registries that issue each identifier whether it exists and what it says. DOI, PubMed, arXiv, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, UK company numbers, domains and more. Each identifier comes back in exactly one of four states: settled true, settled false, not decidable (a person decides) or unreachable (a delay, not evidence). Every check ends in a signed report with its own id, a PDF and a recheck button anyone can press.
 
 By [Metis Foundry](https://metisfoundry.com). One account covers ChatGPT, Codex, Claude, Claude Code, Cursor and VS Code. Every account starts with 5 checks a month; [plans](https://check-api.metisfoundry.com/check/plans).
 
