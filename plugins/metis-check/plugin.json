@@ -87,16 +87,16 @@
               "expected_behavior": "The assistant calls check_text with the pasted paragraph only. The reply lists each identifier with its state (the first three settled true, the last settled false) and registry, states how many were not checked and why, and gives the report and PDF links. It does not grade the paragraph as a whole."
             },
             {
-              "description": "A U.S. case citation, checked against the CourtListener index.",
-              "prompt": "Does the citation 410 U.S. 113 exist? It is cited as Roe v. Wade.",
+              "description": "A ROR id with a name to compare, checked at the Research Organization Registry.",
+              "prompt": "Check the ROR id 042nb2s44 for the Massachusetts Institute of Technology.",
               "tools_triggered": "check_identifier",
-              "expected_behavior": "The assistant calls check_identifier with type case_citation and the case name. The reply gives the state and adds that CourtListener is a citation index, not the court. On an account whose plan does not include case law, the reply relays the tool's sentence as is and names the plans page without adding any pricing."
+              "expected_behavior": "The assistant calls check_identifier with type ror and the name. The reply gives the state (settled true), the registered name ROR holds, and the report link."
             },
             {
               "description": "Open an earlier report by its id.",
-              "prompt": "Open my Metis Check report MC-7K3F-9Q2M-4XWD and tell me whether its signature still verifies.",
+              "prompt": "Open my Metis Check report MC-WX5Q-XV4W-NAT1 and tell me whether its signature still verifies.",
               "tools_triggered": "get_report",
-              "expected_behavior": "The assistant calls get_report with the id. The reply gives the report's items and states, any rechecks filed since, whether the signature verified, and the report link. No new check is run. For an id the account does not hold, the reply relays the tool's sentence."
+              "expected_behavior": "The assistant calls get_report with the id. The reply gives the report's items and states (two settled true, one settled false: the invented DOI 10.1000/xyz.2024.0001), any rechecks filed since, whether the signature verified, and the report link. No new check is run. For an id the account does not hold, the reply relays the tool's sentence."
             }
           ],
           "negative": [
@@ -109,8 +109,8 @@
               "prompt": "Check 1234567890."
             },
             {
-              "description": "A request for legal advice around a citation. The plugin checks whether the citation exists in the CourtListener index and says that is an index, not the court; the assistant gives no legal advice from the result.",
-              "prompt": "Check 410 U.S. 113 and tell me whether I can use it to win my case."
+              "description": "A request to judge whether a paper proves its claim. The plugin establishes that the DOI is registered and what Crossref holds; the assistant says so and does not grade the argument or give advice from the result.",
+              "prompt": "Check 10.1038/s41586-020-2649-2 and tell me whether that paper proves my hypothesis."
             }
           ]
         }
