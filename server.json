@@ -1,9 +1,14 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.metisfoundry/metis-check",
-  "description": "Check citations at the source: DOI, PubMed, arXiv, LEI and 17 more, one of four states each, signed report.",
+  "title": "Metis Check",
+  "description": "Checks an answer's citations at the registries that issue them. Every check files a signed report.",
   "version": "1.0.0",
-  "websiteUrl": "https://metisfoundry.com",
+  "websiteUrl": "https://mcp.metisfoundry.com/docs",
+  "repository": {
+    "url": "https://github.com/MetisFoundry/metis-plugins",
+    "source": "github"
+  },
   "remotes": [
     {
       "type": "streamable-http",
