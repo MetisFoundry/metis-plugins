@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "metis-check",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Metis Check settles identifiers at the bodies that issue them. Give it one identifier (a DOI, PubMed ID, arXiv id, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, RxCUI, PubChem CID, OpenAlex id, Wikidata item, UK company number, FAA N-number, USGS event id, domain name or U.S. case citation) or a passage that contains several, and it asks the registry for each one and answers with exactly one of four states: settled true, settled false, not decidable (a person decides) or unreachable (a delay, not evidence). Anything it did not look at is reported as not checked, with the reason. Every check ends in a report with a unique id (MC-XXXX-XXXX-XXXX), a public page, a PDF, signed receipts and a recheck button that asks the registries again. It checks the checkable parts of a text at the source; it does not grade a text true or false.",
   "author": {
     "name": "Metis Foundry",
@@ -116,7 +116,7 @@
         }
       },
       "publication": {
-        "release_notes": "1.0.2: the plugin files are proprietary (not open source); the description and review cases cover all five tools.",
+        "release_notes": "1.0.3: tool results carry only the fields the privacy policy lists, and the privacy policy (https://mcp.metisfoundry.com/privacy) names every field each tool returns, including nested fields; internal ids and bookkeeping are no longer returned.",
         "countries": []
       }
     }
