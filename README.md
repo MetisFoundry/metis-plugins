@@ -50,4 +50,4 @@ Free: 5 checks a month. Pro: $29 a month (or $276 a year), 2,000 checks, case la
 
 ## Support and license
 
-hello@metisfoundry.com. The files in this repository are MIT licensed (`LICENSE`); the Metis Check service is proprietary (`NOTICE.md`).
+hello@metisfoundry.com. Proprietary: the files in this repository are not open source. You may install and use them, unmodified, with the Metis Check service (`LICENSE`, `NOTICE.md`).

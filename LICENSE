@@ -1,30 +1,30 @@
-MIT License below, so any client or catalogue may read,
-copy and index them.
+Metis Check plugin files: proprietary licence
 
-The Metis Check service itself (https://check-api.metisfoundry.com and
-https://mcp.metisfoundry.com), its source code, its reports and the Metis
-name and marks are proprietary to Metis Foundry (I Am Violet Inc.) and are
-not licensed by this file. Use of the service is governed by
-https://metisfoundry.com/terms.
+Copyright (c) 2026 Metis Foundry (I Am Violet Inc.). All rights reserved.
 
-MIT License
+The files in this repository (the manifests, configuration, skills, images
+and videos that install and present the Metis Check plugin in ChatGPT, Codex,
+Claude, Claude Code and other MCP clients) are proprietary to Metis Foundry.
+They are not open source and no open-source licence is granted.
 
-Copyright (c) 2026 Metis Foundry (I Am Violet Inc.)
+Permitted use. You may download, install and use these files, unmodified,
+only to connect to and use the Metis Check service, under the Metis Check
+terms at https://mcp.metisfoundry.com/terms. Plugin directories, marketplaces
+and registries may read, index and list these files and link to this
+repository.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of the files in this repository (the "Software"), to deal in the Software
-without restriction, including without limitation the rights to use, copy,
-modify, merge, publish, distribute, sublicense, and/or sell copies of the
-Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
+Not permitted without written permission from Metis Foundry: copying,
+modifying, adapting, redistributing, sublicensing or selling these files or
+any part of them, publishing them elsewhere, or using them with any service
+other than Metis Check.
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+The Metis Check service (https://check-api.metisfoundry.com and
+https://mcp.metisfoundry.com), its verification engine, source code, methods
+and reports, and the Metis name and marks, are proprietary to Metis Foundry
+and are not licensed by these files.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+THE FILES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. TO THE EXTENT PERMITTED BY LAW, METIS FOUNDRY IS NOT LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE FILES OR THEIR USE.
+
+Permission requests: hello@metisfoundry.com
