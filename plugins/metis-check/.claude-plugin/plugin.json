@@ -1,7 +1,7 @@
 {
   "name": "metis-check",
   "version": "1.0.0",
-  "description": "Check citations and identifiers at the source: DOI, PubMed, arXiv, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, UK company numbers, domains and U.S. case citations. Each identifier comes back in exactly one of four states (settled true, settled false, not decidable, unreachable) and every check ends in a signed report with its own id that anyone can recheck. Free for 50 checks a month; one account covers Claude, ChatGPT and Codex.",
+  "description": "Check citations and identifiers at the source: DOI, PubMed, arXiv, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, UK company numbers, domains and U.S. case citations. Each identifier comes back in exactly one of four states (settled true, settled false, not decidable, unreachable) and every check ends in a signed report with its own id that anyone can recheck. Free for 5 checks a month; one account covers Claude, ChatGPT and Codex.",
   "author": {
     "name": "Metis Foundry",
     "email": "hello@metisfoundry.com",

@@ -13,7 +13,7 @@
     {
       "name": "metis-check",
       "source": "./plugins/metis-check",
-      "description": "Check citations and identifiers at the source: DOI, PubMed, arXiv, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, UK company numbers, domains and U.S. case citations. One of four states per identifier, a signed report anyone can recheck. Free for 50 checks a month.",
+      "description": "Check citations and identifiers at the source: DOI, PubMed, arXiv, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, UK company numbers, domains and U.S. case citations. One of four states per identifier, a signed report anyone can recheck. Free for 5 checks a month.",
       "version": "1.0.0",
       "author": {
         "name": "Metis Foundry",

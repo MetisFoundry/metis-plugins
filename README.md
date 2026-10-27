@@ -13,7 +13,7 @@ codex plugin marketplace add MetisFoundry/metis-plugins
 codex plugin add metis-check@metis
 ```
 
-Sign in or create a free Metis account when Codex asks (50 checks a month).
+Sign in or create a free Metis account when Codex asks (5 checks a month).
 
 ### ChatGPT
 
@@ -42,7 +42,7 @@ Remote MCP server (OAuth sign-in, free account): `https://check-api.metisfoundry
 
 ### Plans
 
-Every account starts with 50 checks a month. Plans and prices: https://check-api.metisfoundry.com/check/plans. One account covers Codex, ChatGPT and Claude.
+Every account starts with 5 checks a month. Plans and prices: https://check-api.metisfoundry.com/check/plans. One account covers Codex, ChatGPT and Claude.
 
 ### Support
 
