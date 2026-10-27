@@ -1,0 +1,30 @@
+{
+  "name": "metis",
+  "owner": {
+    "name": "Metis Foundry",
+    "email": "hello@metisfoundry.com",
+    "url": "https://metisfoundry.com"
+  },
+  "metadata": {
+    "description": "Metis Foundry plugins for Claude Code: Metis Check settles the citations in an answer at the registries that issue them.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "metis-check",
+      "source": "./plugins/metis-check",
+      "description": "Check citations and identifiers at the source: DOI, PubMed, arXiv, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, UK company numbers, domains and U.S. case citations. One of four states per identifier, a signed report anyone can recheck. Free for 50 checks a month.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Metis Foundry",
+        "email": "hello@metisfoundry.com"
+      },
+      "homepage": "https://mcp.metisfoundry.com/docs",
+      "repository": "https://github.com/MetisFoundry/metis-plugins",
+      "license": "Proprietary",
+      "keywords": ["citations", "citation checker", "DOI", "references", "verify references", "hallucinated citations", "PubMed", "arXiv", "LEI", "case law", "fact check", "research integrity", "mcp"],
+      "category": "productivity",
+      "tags": ["research", "legal", "compliance", "fact-checking"]
+    }
+  ]
+}

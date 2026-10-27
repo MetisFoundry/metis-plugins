@@ -1,6 +1,6 @@
 # Metis plugins
 
-Plugins from [Metis Foundry](https://metisfoundry.com) for Codex and ChatGPT, and the same server for Claude.
+Plugins from [Metis Foundry](https://metisfoundry.com) for Codex, ChatGPT, Claude and Claude Code: a citation checker that verifies DOIs, PubMed and arXiv ids, LEIs, company numbers and U.S. case citations at the registries that issue them, and files a signed report anyone can recheck.
 
 ## Metis Check
 
@@ -22,6 +22,23 @@ Metis Check is submitted to the OpenAI plugin directory. Until it is listed, add
 ### Claude
 
 In Claude, open Settings → Connectors and choose Metis Check, or add it by address: `https://mcp.metisfoundry.com/mcp`.
+
+### Claude Code
+
+```bash
+/plugin marketplace add MetisFoundry/metis-plugins
+/plugin install metis-check@metis
+```
+
+Or add the server directly:
+
+```bash
+claude mcp add --transport http metis-check https://mcp.metisfoundry.com/mcp
+```
+
+### Any MCP client
+
+Remote MCP server (OAuth sign-in, free account): `https://check-api.metisfoundry.com/mcp/check`. Registry name `com.metisfoundry/metis-check`.
 
 ### Plans
 

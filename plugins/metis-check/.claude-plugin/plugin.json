@@ -1,0 +1,14 @@
+{
+  "name": "metis-check",
+  "version": "1.0.0",
+  "description": "Check citations and identifiers at the source: DOI, PubMed, arXiv, ORCID, ROR, ISBN, LEI, ISIN, CUSIP, SEC CIK, EIN, NPI, UK company numbers, domains and U.S. case citations. Each identifier comes back in exactly one of four states (settled true, settled false, not decidable, unreachable) and every check ends in a signed report with its own id that anyone can recheck. Free for 50 checks a month; one account covers Claude, ChatGPT and Codex.",
+  "author": {
+    "name": "Metis Foundry",
+    "email": "hello@metisfoundry.com",
+    "url": "https://metisfoundry.com"
+  },
+  "homepage": "https://mcp.metisfoundry.com/docs",
+  "repository": "https://github.com/MetisFoundry/metis-plugins",
+  "license": "Proprietary",
+  "keywords": ["citations", "citation checker", "DOI", "references", "verify references", "hallucinated citations", "PubMed", "arXiv", "LEI", "case law", "fact check", "research integrity"]
+}
