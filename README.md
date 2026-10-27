@@ -49,3 +49,7 @@ Every account starts with 50 checks a month. Plans and prices: https://check-api
 hello@metisfoundry.com · Privacy: https://mcp.metisfoundry.com/privacy · Terms: https://mcp.metisfoundry.com/terms
 
 Copyright (c) 2026 Metis Foundry. All rights reserved. The plugin files in this repository may be installed and used with Codex, ChatGPT and Claude; the Metis Check service is operated by Metis Foundry under its terms.
+
+### License
+
+The files in this repository are MIT licensed (`LICENSE`); the Metis Check service is proprietary (`NOTICE.md`).

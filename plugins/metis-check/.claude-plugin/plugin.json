@@ -9,6 +9,19 @@
   },
   "homepage": "https://mcp.metisfoundry.com/docs",
   "repository": "https://github.com/MetisFoundry/metis-plugins",
-  "license": "Proprietary",
-  "keywords": ["citations", "citation checker", "DOI", "references", "verify references", "hallucinated citations", "PubMed", "arXiv", "LEI", "case law", "fact check", "research integrity"]
+  "license": "MIT",
+  "keywords": [
+    "citations",
+    "citation checker",
+    "DOI",
+    "references",
+    "verify references",
+    "hallucinated citations",
+    "PubMed",
+    "arXiv",
+    "LEI",
+    "case law",
+    "fact check",
+    "research integrity"
+  ]
 }
