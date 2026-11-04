@@ -4,7 +4,9 @@ Everything in this repository is proprietary to Metis Foundry (I Am Violet Inc.)
 source. The manifest, configuration and skill files are published so that ChatGPT, Codex, Claude,
 Claude Code and other MCP clients can install the Metis Check plugin, and so that directories and
 registries can list it. `LICENSE` says what is permitted: installing and using the files, unmodified,
-with the Metis Check service. Copying, modifying or redistributing them needs written permission.
+with the Metis Check service; and, for plugin directories, marketplaces and registries, mirroring the
+unmodified plugin bundle in `plugins/metis-check` so users can install it. Any other copying,
+modifying or redistributing needs written permission.
 
 The Metis Check service itself (https://check-api.metisfoundry.com and https://mcp.metisfoundry.com),
 its verification engine, source code, methods and reports, and the Metis name and marks are

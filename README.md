@@ -45,9 +45,10 @@ Free: 5 checks a month. Pro: $29 a month (or $276 a year), 2,000 checks, case la
 
 * `.agents/plugins/marketplace.json` — Codex marketplace (`metis`); plugin in `plugins/metis-check`
 * `.claude-plugin/marketplace.json` — Claude Code marketplace (`metis`); plugin manifest in `plugins/metis-check/.claude-plugin`
+* `plugins/metis-check/.codex-plugin/plugin.json` — Codex plugin manifest (icon `assets/icon-codex.png`)
 * `server.json` — official MCP Registry manifest
 * `PUBLISH.md` — how the listings are published
 
 ## Support and license
 
-hello@metisfoundry.com. Proprietary: the files in this repository are not open source. You may install and use them, unmodified, with the Metis Check service (`LICENSE`, `NOTICE.md`).
+hello@metisfoundry.com. Proprietary: the files in this repository are not open source. You may install and use them, unmodified, with the Metis Check service, and plugin directories may mirror the unmodified plugin bundle so users can install it (`LICENSE`, `NOTICE.md`).
